@@ -11,15 +11,17 @@ let cardsEl = document.getElementById("cards-el")
 
 let player ={
      name:"Jon-Thomas",
-     chips:145
-
+     chips:145,
+sayHello: function(){
+    console.log("Sup")
 }
-
+}
+ 
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name +": $" +player.chips
 
 
-console.log(cards)
+player.sayHello()
 function getRandomCard(){
 let randCard = Math.floor(Math.random()*13)+1;
 if (randCard ===  1){
@@ -33,7 +35,6 @@ return randCard;
 }}
 function startGame(){
     isAlive=true
-    hasBlackJack=false
     let firstCard = getRandomCard();
 
 let secondCard = getRandomCard() ;
@@ -66,7 +67,7 @@ messageEl.textContent=message
 }
 
 function newCard(){
-if(isAlive===true && hasBlackJack===false){
+if(isAlive && !hasBlackJack){
     let card =getRandomCard() ;
 sum+=card;
 cards.push(card)
