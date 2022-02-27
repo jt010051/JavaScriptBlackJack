@@ -14,7 +14,7 @@ let sumEl = document.getElementById("sum-el")
 
 let cardsEl = document.getElementById("cards-el")
 
-console.log(array)
+
 function startGame(){
     renderGame()
 }
